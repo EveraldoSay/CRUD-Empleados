@@ -1,0 +1,35 @@
+.modal-header {
+  background: #14332e;
+  color: #eaf6f6;
+  border-radius: 8px 8px 0 0;
+  .close {
+    color: #7fc1ce !important;
+    opacity: 1;
+    font-size: 1.5rem;
+    &:hover {
+      color: #eaf6f6 !important;
+      background: #16807a;
+      border-radius: 50%;
+    }
+  }
+}
+
+.modal-content {
+  background: #e0f3f7;
+  border-radius: 10px;
+  border: none;
+}
+
+.modal-footer {
+  background: #f7f9fa;
+  border-radius: 0 0 8px 8px;
+  .btn-secondary {
+    background: #7fc1ce;
+    color: #14332e;
+    border: none;
+    &:hover {
+      background: #16807a;
+      color: #fff;
+    }
+  }
+}

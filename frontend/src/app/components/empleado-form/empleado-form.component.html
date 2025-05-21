@@ -1,0 +1,137 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ isEdit ? 'Editar Empleado' : 'Registrar Empleado' }}</h4>
+  <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+  <form [formGroup]="empleadoForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>ID Empleado</label>
+          <input type="text" class="form-control" formControlName="idempleado" [readonly]="isEdit">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" class="form-control" formControlName="nombre" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Dirección</label>
+          <input type="text" class="form-control" formControlName="direccion">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Teléfono</label>
+          <input type="text" class="form-control" formControlName="telefono">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>NIT</label>
+          <input type="text" class="form-control" formControlName="nit">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Correo</label>
+          <input type="email" class="form-control" formControlName="correo">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>DPI</label>
+          <input type="text" class="form-control" formControlName="dpi">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Rol ID</label>
+          <input type="number" class="form-control" formControlName="rol_id">
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Fecha de Inicio</label>
+          <input type="date" class="form-control" formControlName="finicio">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Fecha de Fin</label>
+          <input type="date" class="form-control" formControlName="ffin">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Observaciones</label>
+      <textarea class="form-control" formControlName="observaciones" rows="3"></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Estatus</label>
+      <select class="form-select" formControlName="estatus">
+        <option value="Activo">Activo</option>
+        <option value="Inactivo">Inactivo</option>
+      </select>
+    </div>
+
+    <!-- Campos de auditoría -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Adicionó</label>
+          <input type="text" class="form-control" formControlName="adiciono">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Fecha de Adición</label>
+          <input type="date" class="form-control" formControlName="fecha_adiciono">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Modificó</label>
+          <input type="text" class="form-control" formControlName="modifico">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label>Fecha de Modificación</label>
+          <input type="date" class="form-control" formControlName="fecha_modificacion">
+        </div>
+      </div>
+    </div>
+    <!-- Fin campos de auditoría -->
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Cancelar</button>
+      <button type="submit" class="btn btn-primary" [disabled]="empleadoForm.invalid || loading">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+        {{ isEdit ? 'Actualizar' : 'Guardar' }}
+      </button>
+    </div>
+  </form>
+</div>

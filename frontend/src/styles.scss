@@ -1,0 +1,196 @@
+// Paleta de colores
+$color-dark:      #1a1d1b;
+$color-green1:    #14332e;
+$color-green2:    #17504c;
+$color-green3:    #16807a;
+$color-green4:    #7fc1ce;
+$color-bg:        #f7f9fa;
+$color-text:      #eaf6f6;
+$color-danger:    #e74c3c; 
+$color-corin:     #800020; 
+
+@use "bootstrap/scss/bootstrap" as *;
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import "font-awesome/css/font-awesome.css";
+
+// Fondo general 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $color-green4;
+  color: $color-dark;
+  margin: 0;
+  min-height: 100vh;
+}
+
+// Tarjetas y formularios 
+.container, .modal-content, .form-modal {
+  background: $color-bg;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba($color-green2, 0.12);
+  padding: 30px;
+  margin-top: 40px;
+  border: 1.5px solid $color-green4;
+}
+
+// Encabezados y títulos
+.header, .app-header, .app-footer, .modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: $color-green1;
+  color: $color-text;
+  padding: 2rem 2rem 1.5rem 2rem;
+  border-radius: 18px 18px 0 0;
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba($color-green1, 0.08);
+  font-weight: 700;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  position: relative;
+  // Línea decorativa 
+  &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(90deg, $color-green3 0%, $color-green4 100%);
+    border-radius: 3px;
+    margin: 18px auto 0 auto;
+    opacity: 0.7;
+  }
+}
+
+// Botón "Registrar Empleado" 
+.btn-register {
+  background: linear-gradient(90deg, #1de9b6 0%, #16807a 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.15rem;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 2rem;
+  box-shadow: 0 4px 18px rgba($color-green3, 0.18);
+  transition: background 0.2s, box-shadow 0.2s, transform 0.15s;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  outline: none;
+  &:hover, &:focus {
+    background: linear-gradient(90deg, #16807a 0%, #1de9b6 100%);
+    color: $color-dark;
+    box-shadow: 0 6px 24px rgba($color-green4, 0.25);
+    transform: translateY(-2px) scale(1.04);
+  }
+}
+
+// Botones principales y secundarios
+.btn-primary {
+  background-color: $color-green3;
+  border-color: $color-green3;
+  color: $color-text;
+  &:hover {
+    background-color: $color-green2;
+    border-color: $color-green2;
+    color: $color-text;
+  }
+}
+
+.btn-secondary {
+  background-color: $color-green2;
+  border-color: $color-green2;
+  color: $color-text;
+  &:hover {
+    background-color: $color-green3;
+    border-color: $color-green3;
+    color: $color-text;
+  }
+}
+
+// Botón de cerrar (X) en modales
+.close, .btn-close {
+  color: $color-green4 !important; 
+  background: transparent;
+  font-size: 1.7rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  transition: background 0.2s, color 0.2s;
+  position: absolute;
+  top: 1.2rem;
+  right: 1.5rem;
+  z-index: 10;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover, &:focus {
+    background: $color-green4;
+    color: $color-green2 !important;
+  }
+}
+
+// Tablas
+.table {
+  background: $color-bg;
+  border-radius: 8px;
+  margin-top: 20px;
+  th {
+    background-color: $color-green1;
+    color: $color-text;
+    border: none;
+  }
+  td {
+    border-top: 1px solid $color-green4;
+  }
+}
+
+// Inputs y selects
+input, select, textarea {
+  border: 1.5px solid $color-green4;
+  border-radius: 6px;
+  padding: 0.5rem;
+  background: lighten($color-green4, 25%);
+  &:focus {
+    border-color: $color-green3;
+    background: $color-bg;
+  }
+}
+
+// Etiquetas y títulos de formularios
+.form-group label, .form-title {
+  color: $color-green2;
+  font-weight: 600;
+}
+
+// Badges de estado
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: lighten($color-green3, 40%);
+  color: $color-green2;
+  &.inactive {
+    background-color: #fdecea;
+    color: #dc3545;
+  }
+}
+
+// Footer del modal
+.modal-footer {
+  background: $color-green4;
+  border-radius: 0 0 18px 18px;
+  .btn-secondary {
+    background: $color-green2;
+    color: $color-text;
+    border: none;
+    &:hover {
+      background: $color-green3;
+      color: #fff;
+    }
+  }
+}

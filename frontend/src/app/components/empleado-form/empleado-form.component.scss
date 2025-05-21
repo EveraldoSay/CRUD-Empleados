@@ -1,0 +1,60 @@
+.form-modal {
+  background: #e0f3f7; 
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(20, 51, 46, 0.08);
+  padding: 2rem 2.5rem;
+}
+
+.form-title {
+  color: #14332e;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  color: #17504c;
+  font-weight: 600;
+}
+
+input, select, textarea {
+  border: 1.5px solid #7fc1ce;
+  border-radius: 6px;
+  padding: 0.5rem;
+  background: #f7f9fa;
+  &:focus {
+    border-color: #16807a;
+    background: #e0f3f7;
+  }
+}
+
+.btn-primary {
+  background: #16807a;
+  border: none;
+  color: #eaf6f6;
+  &:hover {
+    background: #17504c;
+    color: #fff;
+  }
+}
+
+.btn-secondary {
+  background: #7fc1ce;
+  color: #14332e;
+  border: none;
+  &:hover {
+    background: #16807a;
+    color: #fff;
+  }
+}
+
+// Botón de cerrar (X) en el modal
+.close {
+  color: #16807a !important;
+  font-size: 1.5rem;
+  opacity: 1;
+  &:hover {
+    color: #14332e !important;
+    background: #e0f3f7;
+    border-radius: 50%;
+  }
+}

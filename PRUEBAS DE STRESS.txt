@@ -1,0 +1,4 @@
+PUT:  http://localhost:8080/api/empleados/444
+DELETE: http://localhost:8080/api/empleados/444
+POST: http://localhost:8080/api/empleados
+GET:  http://localhost:8080/api/empleados
